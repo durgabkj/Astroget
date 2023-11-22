@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Astroget</string>
+
+    <!-- to toggle the open close button of the navigation drawer -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="rupee_sym">₹</string>
+
+</resources>

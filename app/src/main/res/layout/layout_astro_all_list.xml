@@ -9,7 +9,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcvTodayMatch"
+        android:id="@+id/mcvAstrologer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -45,7 +45,7 @@
 
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/civAstroImage"
+                            android:id="@+id/civAstroImageList"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
@@ -70,7 +70,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvAstrologerNage"
+                        android:id="@+id/tvAstrologerNameList"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"

@@ -105,6 +105,11 @@ public class HomePageActivity extends AppCompatActivity {
                     startActivity(intent);
                     b.myDrawerLayout.closeDrawer(GravityCompat.START);
                     return true;
+                }else  if (id == R.id.mnuProfile) {
+                    Intent intent = new Intent(context, ProfileActivity.class);
+                    startActivity(intent);
+                    b.myDrawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
                 }
                 return false;
             }

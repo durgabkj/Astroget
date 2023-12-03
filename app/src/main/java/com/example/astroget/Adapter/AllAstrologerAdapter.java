@@ -1,7 +1,7 @@
 package com.example.astroget.Adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,75 +9,73 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.astroget.MainActivity;
 import com.example.astroget.Model.AstroModel;
 import com.example.astroget.R;
+import com.example.astroget.Screen.AstrologerProfileActivity;
 
 import java.util.ArrayList;
 
-public class AllAstrologerAdapter extends RecyclerView.Adapter<AllAstrologerAdapter.SingleItemRowHolder> {
+public class AllAstrologerAdapter extends RecyclerView.Adapter<AllAstrologerAdapter.MyViewHolder> {
 
-    private ArrayList<AstroModel> itemsList;
-    private Context mContext;
+     ArrayList<AstroModel> itemsList;
+     Context context;
 
 
     public AllAstrologerAdapter(Context context, ArrayList<AstroModel> itemsList) {
         this.itemsList = itemsList;
-        this.mContext = context;
+        this.context = context;
     }
 
 
     @Override
-    public SingleItemRowHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_astro_all_list , null);
-        SingleItemRowHolder mh = new SingleItemRowHolder(v);
-        return mh;
+    public AllAstrologerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_astro_all_list, parent, false);
+        return new MyViewHolder(view);
     }
 
-    @SuppressLint("CheckResult")
     @Override
-    public void onBindViewHolder(SingleItemRowHolder holder, int i) {
+    public void onBindViewHolder(@NonNull AllAstrologerAdapter.MyViewHolder holder, int position) {
+        AstroModel astroModel = itemsList.get(position);
 
-        AstroModel astroModel = itemsList.get(i);
+        holder.tvName.setText(astroModel.getAstroName());
+        
+        Glide.with(holder.astroImage)
+                .load(astroModel.getImgid())
+                .into(holder.astroImage);
 
-      //  holder.tvName.setText(astroModel.getAstroName());
 
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), AstrologerProfileActivity.class);
+            view.getContext().startActivity(intent);
+        });
 
 
     }
+
+
 
     @Override
     public int getItemCount() {
         return (null != itemsList ? itemsList.size() : 0);
     }
 
-    public class SingleItemRowHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView tvName;
-        protected ImageView itemImage;
+        protected ImageView astroImage;
 
 
-        public SingleItemRowHolder(View view) {
-            super(view);
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
 
-           // this.tvName = (TextView) view.findViewById(R.id.tvAstrologerNage);
-//
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                    Toast.makeText(v.getContext(), tvName.getText(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
-
+            astroImage = itemView.findViewById(R.id.civAstroImageList);
+            tvName = itemView.findViewById(R.id.tvAstrologerNameList);
         }
-
     }
 
 }

@@ -35,7 +35,6 @@ Context context;
                                   } else {
                                       startActivity(new Intent(context, LoginActivity.class));
                                       finish();
-
                                   }
                               }
                           },1300);

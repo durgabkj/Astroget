@@ -4,84 +4,364 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCF0F3"
     android:orientation="vertical"
     tools:context=".Screen.AstrologerProfileActivity">
 
 
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtTeamToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/dark_orange"
+            app:navigationIcon="@drawable/baseline_arrow_back_24"
+            app:title="Durga singh"
+            app:navigationIconTint="@color/white"
+            app:titleCentered="false"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/mcvNewsDetail"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="wrap_content">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/ivNewsImage"
+                    android:id="@+id/ivAstrologerProfileImage"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="250dp"
                     android:background="@color/white"
                     android:scaleType="fitXY"
                     android:src="@drawable/images"
                     android:transitionName="tnBlogImage" />
 
-                <ImageView
-                    android:id="@+id/ivNewsDetailsBack"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/icon_bg"
-                    android:layout_margin="15dp"
-                    android:padding="5dp"
-                    android:src="@drawable/baseline_arrow_back_24" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/transparent_bg"
-                    android:layout_gravity="bottom"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/tvNewsDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/login_font"
-                        android:justificationMode="inter_word"
-                        android:textColor="#BF000000"
-                        android:text="Durga singh"
-                      android:gravity="center"
-                        android:textSize="14dp" />
-
-
-                </LinearLayout>
-
-            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
 
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="10dp">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/login_font"
+                    android:text="chat"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:icon="@drawable/baseline_chat_24"
+                    app:backgroundTint="@color/dark_orange"
+                    app:cornerRadius="8dp" />
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/login_font"
+                    android:text="call"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:icon="@drawable/baseline_wifi_calling_3_24"
+                    app:backgroundTint="@color/dark_orange"
+                    app:cornerRadius="8dp" />
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/login_font"
+                    android:text="Appointment"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:icon="@drawable/appointment"
+                    app:backgroundTint="@color/dark_orange"
+                    app:cornerRadius="8dp" />
 
 
             </LinearLayout>
 
-        </ScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durga singh"
+                android:textStyle="bold"
+                android:fontFamily="@font/login_font"
+                android:layout_gravity="start"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vedic Astrologer"
+                android:textStyle="normal"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:fontFamily="@font/login_font"
+                android:textColor="#7C7A7A"
+                android:layout_gravity="start"/>
+
+            <RatingBar
+                android:id="@+id/rbAvgRating"
+                style="@android:style/Widget.Material.Light.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:numStars="5"
+                android:rating="3.5"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:theme="@style/RatingBar"
+                android:layout_height="wrap_content" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/gray"
+                        android:textStyle="normal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3k"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/gray"
+                        android:textStyle="normal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5k"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/gray"
+                        android:textStyle="normal"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2k"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/login_font"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="@dimen/dimen_10dp"
+    android:background="#48A9A9A9"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textSize="15sp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:fontFamily="@font/login_font"
+                android:textColor="#DC1E1E1E"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In other words, astrologers pretend to be scientists who can accurately predict future events by the movement of celestial bodies, such as planets and stars. Astrologers believe that they can predict a person's future based on their astrological sign"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="#EE555454"
+                android:textStyle="normal"/>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:weightSum="3"
+               android:layout_marginTop="@dimen/dimen_10dp"
+               android:orientation="horizontal">
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="start"
+                   android:orientation="vertical">
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Experience"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/gray"
+                       android:textStyle="normal"/>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="3 Years"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/black"
+                       android:textStyle="bold"/>
+
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="start"
+                   android:orientation="vertical">
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Language"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/gray"
+                       android:textStyle="normal"/>
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Hindi,English"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/black"
+                       android:textStyle="bold"/>
+
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="start"
+                   android:orientation="vertical">
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Price"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/gray"
+                       android:textStyle="normal"/>
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="300/mint"
+                       android:textSize="14sp"
+                       android:fontFamily="@font/login_font"
+                       android:textColor="@color/black"
+                       android:textStyle="bold"/>
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 
